@@ -2,15 +2,15 @@ part of swagger.api;
 
 class Breed {
   /* Breed */
-  String breed = null;
+  String? breed = null;
 /* Country */
-  String country = null;
+  String? country = null;
 /* Origin */
-  String origin = null;
+  String? origin = null;
 /* Coat */
-  String coat = null;
+  String? coat = null;
 /* Pattern */
-  String pattern = null;
+  String? pattern = null;
 
   Breed();
 
@@ -35,17 +35,21 @@ class Breed {
       'origin': origin,
       'coat': coat,
       'pattern': pattern
-     };
+    };
   }
 
-  static List<Breed> listFromJson(List<dynamic> json) {
-    return json == null ? new List<Breed>() : json.map((value) => new Breed.fromJson(value)).toList();
+  static List<Breed> listFromJson(List<dynamic>? json) {
+    return json == null
+        ? List<Breed>.empty()
+        : json.map((value) => new Breed.fromJson(value)).toList();
   }
 
-  static Map<String, Breed> mapFromJson(Map<String, Map<String, dynamic>> json) {
+  static Map<String, Breed> mapFromJson(
+      Map<String, Map<String, dynamic>> json) {
     var map = new Map<String, Breed>();
     if (json != null && json.length > 0) {
-      json.forEach((String key, Map<String, dynamic> value) => map[key] = new Breed.fromJson(value));
+      json.forEach((String key, Map<String, dynamic> value) =>
+          map[key] = new Breed.fromJson(value));
     }
     return map;
   }

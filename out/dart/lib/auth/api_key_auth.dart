@@ -1,5 +1,5 @@
 part of swagger.api;
-
+/*
 class ApiKeyAuth implements Authentication {
 
   final String location;
@@ -25,3 +25,4 @@ class ApiKeyAuth implements Authentication {
     }
   }
 }
+*/

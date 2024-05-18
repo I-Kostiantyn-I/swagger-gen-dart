@@ -1,15 +1,15 @@
 part of swagger.api;
 
 class OAuth implements Authentication {
-  String accessToken;
+  String? accessToken;
 
-  OAuth({this.accessToken}) {
-  }
+  OAuth({this.accessToken}) {}
 
   @override
-  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
+  void applyToParams(
+      List<QueryParam> queryParams, Map<String, String> headerParams) {
     if (accessToken != null) {
-      headerParams["Authorization"] = "Bearer " + accessToken;
+      headerParams["Authorization"] = "Bearer $accessToken";
     }
   }
 
